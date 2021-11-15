@@ -38,7 +38,25 @@ const getRandomMove = () => {
   
   const updateDOM = (moveOne, moveTwo, outcome) => {
     // TODO Implement this method to update the DOM
+
+    // find div move one and two
+    let playerOneMove = document.querySelector("#player-one-move");
+    console.log(playerOneMove);
+    let playerTwoMove = document.querySelector("#player-two-move");
+    console.log(playerTwoMove);
+
+    // update image into
+    let playerOneMoveImg = document.querySelector("#player-one-move__img");
+    let playerTwoMoveImg = document.querySelector("#player-two-move__img");
+    playerOneMoveImg.img = moveOne;
+    playerTwoMoveImg.img = moveTwo;
     // There are some images you can use in the images directory
+
+    // add result message
+    const newResult = document.createElement("p");
+    newResult.textContent = `The result is: ${outcome}`;
+    let section = document.querySelector("section");
+    section.append(newResult);
   };
   
   const playButton = document.getElementById("play-btn");
